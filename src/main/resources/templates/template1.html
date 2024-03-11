@@ -1,0 +1,46 @@
+    <!doctype html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http/www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+        <script  src="webjars/bootstrap/5.2.3/js/bootstrap.bundle.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/userindex}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Patients</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item"  th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:href="@{/adminformPatients}">Nouveau </a></li>
+                        <li><a class="dropdown-item" th:href="@{/userindex}">Chercher </a></li>
+                    </ul>
+                </li>
+                </li>
+                </ul>
+                <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" th:text="${#authentication.getName()}" data-bs-toggle="dropdown"></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <form method="post" th:action="@{/logout}">
+                                <button type="submit" class="dropdown-item" >LogOut</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section layout:fragment="content1">
+
+    </section>
+    </body>
+    </html>

@@ -20,15 +20,15 @@ public class EnsetHopitalApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Patient patient1=new Patient();
+       /* Patient patient1=new Patient();
         patient1.setNom("Oussama");
         patient1.setMalade(false);
-        patient1.setDate(new Date());
+        patient1.setDateNaissance(new Date());
         patient1.setScore(100);
         Patient patient2=new Patient(null,"yassine",new Date(),true,200);
-        Patient patient3=Patient.builder().nom("mehdi").malade(false).date(new Date()).score(300).build();
+        Patient patient3=Patient.builder().nom("mehdi").malade(false).dateNaissance(new Date()).score(300).build();
         patientRepository.save(patient1);
         patientRepository.save(patient2);
-        patientRepository.save(patient3);
+        patientRepository.save(patient3);*/
     }
 }
